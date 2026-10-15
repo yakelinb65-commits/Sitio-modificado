@@ -1,19 +1,287 @@
 <!DOCTYPE HTML>
 <!--
-	Paradigm Shift by HTML5 UP
+	Paradigm Shift por HTML5 UP - Adaptado para Clínica Veterinaria
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
 	<head>
-		<title>Paradigm Shift by HTML5 UP</title>
+		<title>Clínica Veterinaria Huellitas y Salud</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<meta name="description" content="" />
-		<meta name="keywords" content="" />
+		<meta name="description" content="Cuidado profesional, médico y con amor para tus mascotas." />
+		<meta name="keywords" content="veterinaria, salud animal, perros, gatos, cirugia veterinaria, vacunacion, estetica canina" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* =========================================================
+			   DISEÑO ELEGANTE PREMIUM Y MARQUESINA ESPECTACULAR
+			   ========================================================= */
+
+			:root {
+				--brand-blue: #077197;          /* Azul Océano Principal */
+				--brand-blue-dark: #044b64;     /* Azul Profundo */
+				--brand-navy: #0a192f;          /* Fondo Elegante Azul Noche */
+				--brand-gold: #d4af37;          /* Dorado Elegante */
+				--brand-gold-light: #f3e5ab;    /* Dorado Suave */
+				--text-dark: #0f172a;           /* Texto Nítido */
+				--text-body: #2d3748;           /* Gris Oscuro Lectura */
+				--accent-btn: #077197;          /* Botones Principales */
+				--accent-btn-hover: #044b64;
+			}
+
+			/* 1. MARQUESINA ESPECTACULAR FLOATING GLASSMORPHISM */
+			.marquee-container {
+				width: 100%;
+				background: linear-gradient(135deg, rgba(7, 113, 151, 0.95), rgba(10, 25, 47, 0.98));
+				color: #ffffff;
+				padding: 12px 0;
+				overflow: hidden;
+				position: relative;
+				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+				border-bottom: 2px solid var(--brand-gold);
+				z-index: 100;
+			}
+
+			.marquee-content {
+				display: flex;
+				white-space: nowrap;
+				animation: marquee-scroll 28s linear infinite;
+			}
+
+			.marquee-item {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				font-size: 1.05rem;
+				font-weight: 600;
+				padding: 0 30px;
+				color: #ffffff;
+				letter-spacing: 0.5px;
+			}
+
+			.marquee-item span.gold {
+				color: var(--brand-gold-light);
+				font-weight: 800;
+			}
+
+			.marquee-item i {
+				color: var(--brand-gold);
+				font-size: 1.2rem;
+			}
+
+			@keyframes marquee-scroll {
+				0% { transform: translateX(0); }
+				100% { transform: translateX(-50%); }
+			}
+
+			/* Pause al pasar el mouse por la marquesina */
+			.marquee-container:hover .marquee-content {
+				animation-play-state: paused;
+			}
+
+			/* 2. PANEL LATERAL IZQUIERDO ELEGANTE */
+			section > header {
+				background: linear-gradient(160deg, #0a192f 0%, #077197 100%) !important;
+				border-right: 3px solid var(--brand-gold);
+			}
+
+			section > header h1, 
+			section > header h2, 
+			section > header h3, 
+			section > header p {
+				color: #ffffff !important;
+				opacity: 1 !important;
+			}
+
+			/* 3. TÍTULO "HUELLITAS & SALUD" BIEN GRANDE Y SOFISTICADO */
+			.brand-container h1 {
+				margin: 0;
+				color: #ffffff !important;
+				font-size: 3.6rem !important; /* Extra Grande */
+				font-weight: 900 !important;   /* Extra Negrita */
+				letter-spacing: -1px;
+				line-height: 1.1;
+				text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+			}
+
+			.brand-container h1 span.brand-accent {
+				color: var(--brand-gold) !important;
+				font-style: italic;
+			}
+
+			/* Logo enmarcado en dorado */
+			.brand-container {
+				display: flex;
+				align-items: center;
+				gap: 18px;
+				margin-bottom: 1.2rem;
+			}
+			.brand-logo {
+				max-width: 95px;
+				height: auto;
+				border-radius: 14px;
+				object-fit: contain;
+				background-color: #ffffff;
+				padding: 6px;
+				border: 2px solid var(--brand-gold);
+				box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+			}
+
+			/* 4. CONTENIDO PRINCIPAL Y LECTURA CÓMODA */
+			body, p, span, li, dt, dd, td, th, label, input, textarea {
+				color: var(--text-body) !important;
+				opacity: 1 !important;
+				font-size: 1.05rem !important;
+				line-height: 1.7 !important;
+			}
+
+			.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+				color: var(--brand-navy) !important;
+				opacity: 1 !important;
+				font-weight: 800 !important;
+			}
+
+			/* Textos resaltados en dorado o azul marino */
+			strong, b {
+				color: var(--brand-blue) !important;
+				font-weight: 800 !important;
+			}
+
+			/* Íconos de servicios */
+			.feature-icons li {
+				color: var(--text-body) !important;
+				font-weight: 600 !important;
+				font-size: 1.05rem !important;
+				opacity: 1 !important;
+			}
+			.feature-icons li::before {
+				color: var(--brand-blue) !important;
+				opacity: 1 !important;
+			}
+
+			/* 5. BOTONES ELEGANTES CON EFECTO Y SOMBRA */
+			input[type="submit"].primary,
+			input[type="reset"].primary,
+			input[type="button"].primary,
+			button.primary,
+			.button.primary {
+				background: linear-gradient(135deg, var(--brand-gold) 0%, #b89228 100%) !important;
+				box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35) !important;
+				color: #0a192f !important;
+				font-weight: 800 !important;
+				border: none !important;
+				border-radius: 8px !important;
+				opacity: 1 !important;
+				transition: all 0.3s ease;
+			}
+
+			input[type="submit"].primary:hover,
+			input[type="reset"].primary:hover,
+			input[type="button"].primary:hover,
+			button.primary:hover,
+			.button.primary:hover {
+				background: linear-gradient(135deg, #e5c158 0%, var(--brand-gold) 100%) !important;
+				transform: translateY(-2px);
+				box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
+			}
+
+			.button {
+				border: 2px solid var(--brand-blue) !important;
+				color: var(--brand-blue) !important;
+				font-weight: 800 !important;
+				border-radius: 8px !important;
+				opacity: 1 !important;
+				transition: all 0.3s ease;
+			}
+
+			/* Botón en el panel lateral */
+			section > header .button {
+				border-color: var(--brand-gold) !important;
+				color: var(--brand-gold) !important;
+			}
+
+			section > header .button:hover {
+				background-color: var(--brand-gold) !important;
+				color: #0a192f !important;
+			}
+
+			.button:hover {
+				background-color: var(--brand-blue) !important;
+				color: #ffffff !important;
+			}
+
+			/* Enlaces */
+			a {
+				color: var(--brand-blue) !important;
+				font-weight: 700;
+				opacity: 1 !important;
+			}
+			a:hover {
+				color: var(--brand-blue-dark) !important;
+			}
+
+			footer .items h3 {
+				color: var(--brand-blue) !important;
+				font-weight: 800 !important;
+				font-size: 1.25rem !important;
+			}
+
+			/* Adaptabilidad móvil */
+			@media screen and (max-width: 736px) {
+				.brand-container {
+					flex-direction: column;
+					align-items: flex-start;
+				}
+				.brand-logo {
+					max-width: 75px;
+				}
+				.brand-container h1 {
+					font-size: 2.6rem !important;
+				}
+				body, p, span, li {
+					font-size: 1rem !important;
+				}
+			}
+		</style>
 	</head>
 	<body class="is-preload">
+
+		<!-- Marquesina Espectacular Superior -->
+		<div class="marquee-container">
+			<div class="marquee-content">
+				<div class="marquee-item">
+					<i class="icon solid fa-paw"></i> ¡Bienvenidos a <span class="gold">Clínica Veterinaria Huellitas & Salud</span>!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-ambulance"></i> Atención de <span class="gold">Urgencias y Emergencias 24/7</span>
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-user-md"></i> Cuidado Médico Profesional y Diagnóstico Moderno
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-cut"></i> <span class="gold">Estética y Spa Canino/Felino</span> — ¡Haz tu cita hoy!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-phone"></i> Llámanos o escríbenos al <span class="gold">+504 9348-9180</span>
+				</div>
+				<!-- Duplicado para loop continuo fluido -->
+				<div class="marquee-item">
+					<i class="icon solid fa-paw"></i> ¡Bienvenidos a <span class="gold">Clínica Veterinaria Huellitas & Salud</span>!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-ambulance"></i> Atención de <span class="gold">Urgencias y Emergencias 24/7</span>
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-user-md"></i> Cuidado Médico Profesional y Diagnóstico Moderno
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-cut"></i> <span class="gold">Estética y Spa Canino/Felino</span> — ¡Haz tu cita hoy!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-phone"></i> Llámanos o escríbenos al <span class="gold">+504 9348-9180</span>
+				</div>
+			</div>
+		</div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -21,67 +289,71 @@
 				<!-- Intro -->
 					<section class="intro">
 						<header>
-							<h1>Paradigm Shift</h1>
-							<p>A free responsive site template designed by <a href="https://twitter.com/ajlkn">@ajlkn</a> / <a href="https://html5up.net">HTML5 UP</a></p>
+							<!-- Logo y Título "Huellitas & Salud" BIEN GRANDE Y ELEGANTE -->
+							<div class="brand-container">
+								<img src="images/logo.png" alt="Logo Huellitas y Salud" class="brand-logo" />
+								<h1>Huellitas <span class="brand-accent">&</span> Salud</h1>
+							</div>
+							<p>Cuidado médico profesional y con amor para los miembros más consentidos de tu familia.</p>
 							<ul class="actions">
-								<li><a href="#first" class="arrow scrolly"><span class="label">Next</span></a></li>
+								<li><a href="#first" class="arrow scrolly"><span class="label">Conócenos</span></a></li>
 							</ul>
 						</header>
 						<div class="content">
-							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="" /></span>
+							<span class="image fill" data-position="center"><img src="images/pic01.jpg" alt="Mascota feliz" /></span>
 						</div>
 					</section>
 
 				<!-- Section -->
 					<section id="first">
 						<header>
-							<h2>Magna sed nullam nisl adipiscing</h2>
+							<h2>Comprometidos con el bienestar de tu mascota</h2>
 						</header>
 						<div class="content">
-							<p><strong>Lorem ipsum dolor</strong> sit amet consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
-							<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+							<p><strong>En Veterinaria Huellitas & Salud</strong> nos apasiona brindar atención médica integral de la más alta calidad. Contamos con instalaciones equipadas y un equipo altamente capacitado para atender a tu perro, gato u otra mascota con el cariño y respeto que se merecen.</p>
+							<span class="image main"><img src="images/pic02.jpg" alt="Examen veterinario" /></span>
 						</div>
 					</section>
 
 				<!-- Section -->
 					<section>
 						<header>
-							<h2>Feugiat consequat tempus ultrices</h2>
+							<h2>Nuestros Servicios</h2>
 						</header>
 						<div class="content">
-							<p><strong>Etiam tristique libero</strong> eu nibh porttitor amet fermentum. Nullam venenatis erat id vehicula ultrices sed ultricies condimentum.</p>
+							<p><strong>Atención integral en un solo lugar.</strong> Diseñamos nuestros servicios para cubrir cada etapa de la vida de tu compañero.</p>
 							<ul class="feature-icons">
-								<li class="icon solid fa-laptop">Consequat tempus</li>
-								<li class="icon solid fa-bolt">Etiam adipiscing</li>
-								<li class="icon solid fa-signal">Libero nullam</li>
-								<li class="icon solid fa-cog">Blandit condimentum</li>
-								<li class="icon solid fa-map-marker-alt">Lorem ipsum dolor</li>
-								<li class="icon solid fa-code">Nibh amet venenatis</li>
+								<li class="icon solid fa-stethoscope">Consulta General</li>
+								<li class="icon solid fa-syringe">Vacunación y Desparasitación</li>
+								<li class="icon solid fa-cut">Estética y Peluquería Canina</li>
+								<li class="icon solid fa-microscope">Laboratorio y Diagnóstico</li>
+								<li class="icon solid fa-heartbeat">Cirugía General</li>
+								<li class="icon solid fa-ambulance">Urgencias 24/7</li>
 							</ul>
-							<p>Vehicula ultrices sed ultricies condimentum. Magna sed etiam consequat, et lorem adipiscing sed nulla. Volutpat nisl et tempus et dolor libero, feugiat magna tempus, sed et lorem adipiscing.</p>
+							<p>Prevenimos y tratamos diversos padecimientos con equipamiento moderno, ofreciéndote tranquilidad en el diagnóstico y tratamiento de tu mascota.</p>
 						</div>
 					</section>
 
 				<!-- Section -->
 					<section>
 						<header>
-							<h2>Ultrices erat magna sed condimentum</h2>
+							<h2>Especialidades y Áreas de Atención</h2>
 						</header>
 						<div class="content">
-							<p><strong>Integer mollis egestas</strong> nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+							<p><strong>Conoce nuestras instalaciones</strong> y los espacios diseñados para minimizar el estrés de tus mascotas durante su visita.</p>
 
 							<!-- Section -->
 								<section>
 									<header>
-										<h3>Erat aliquam</h3>
-										<p>Vehicula ultrices dolor amet ultricies et condimentum. Magna sed etiam consequat, et lorem adipiscing sed dolor sit amet, consectetur amet do eiusmod tempor incididunt  ipsum suspendisse ultrices gravida.</p>
+										<h3>Consultas y Chequeos Preventivos</h3>
+										<p>Realizamos revisiones periódicas, planes de vacunación a medida y controles de nutrición para mantener a tu mascota sana y fuerte.</p>
 									</header>
 									<div class="content">
 										<div class="gallery">
-											<a href="images/gallery/fulls/01.jpg" class="landscape"><img src="images/gallery/thumbs/01.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/02.jpg"><img src="images/gallery/thumbs/02.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/03.jpg"><img src="images/gallery/thumbs/03.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/04.jpg" class="landscape"><img src="images/gallery/thumbs/04.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/01.jpg" class="landscape"><img src="images/gallery/thumbs/01.jpg" alt="Consulta médica" /></a>
+											<a href="images/gallery/fulls/02.jpg"><img src="images/gallery/thumbs/02.jpg" alt="Vacunación" /></a>
+											<a href="images/gallery/fulls/03.jpg"><img src="images/gallery/thumbs/03.jpg" alt="Chequeo" /></a>
+											<a href="images/gallery/fulls/04.jpg" class="landscape"><img src="images/gallery/thumbs/04.jpg" alt="Cuidado de cachorro" /></a>
 										</div>
 									</div>
 								</section>
@@ -89,14 +361,14 @@
 							<!-- Section -->
 								<section>
 									<header>
-										<h3>Nisl consequat</h3>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam sed facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet mauris. Ut magna finibus nisi nec lacinia ipsum maximus.</p>
+										<h3>Quirófano y Diagnóstico por Imagen</h3>
+										<p>Contamos con equipos de ecografía, rayos X y quirófano completamente equipado para procedimientos preventivos y de urgencia.</p>
 									</header>
 									<div class="content">
 										<div class="gallery">
-											<a href="images/gallery/fulls/05.jpg" class="landscape"><img src="images/gallery/thumbs/05.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/06.jpg"><img src="images/gallery/thumbs/06.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/07.jpg"><img src="images/gallery/thumbs/07.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/05.jpg" class="landscape"><img src="images/gallery/thumbs/05.jpg" alt="Quirófano veterinario" /></a>
+											<a href="images/gallery/fulls/06.jpg"><img src="images/gallery/thumbs/06.jpg" alt="Ecografía" /></a>
+											<a href="images/gallery/fulls/07.jpg"><img src="images/gallery/thumbs/07.jpg" alt="Rayos X" /></a>
 										</div>
 									</div>
 								</section>
@@ -104,14 +376,14 @@
 							<!-- Section -->
 								<section>
 									<header>
-										<h3>Lorem gravida</h3>
-										<p>Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aenean ornare velit lacus, ac varius sed enim lorem ullamcorper dolore.  ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis.</p>
+										<h3>Estética y Spa Canino/Felino</h3>
+										<p>Servicios de baño, corte de pelo, limpieza de oídos y uñas para mantener la higiene y salud de la piel de tus peludos.</p>
 									</header>
 									<div class="content">
 										<div class="gallery">
-											<a href="images/gallery/fulls/08.jpg" class="portrait"><img src="images/gallery/thumbs/08.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/09.jpg" class="portrait"><img src="images/gallery/thumbs/09.jpg" alt="" /></a>
-											<a href="images/gallery/fulls/10.jpg" class="landscape"><img src="images/gallery/thumbs/10.jpg" alt="" /></a>
+											<a href="images/gallery/fulls/08.jpg" class="portrait"><img src="images/gallery/thumbs/08.jpg" alt="Baño canino" /></a>
+											<a href="images/gallery/fulls/09.jpg" class="portrait"><img src="images/gallery/thumbs/09.jpg" alt="Corte de pelo" /></a>
+											<a href="images/gallery/fulls/10.jpg" class="landscape"><img src="images/gallery/thumbs/10.jpg" alt="Spa felino" /></a>
 										</div>
 									</div>
 								</section>
@@ -122,332 +394,62 @@
 				<!-- Section -->
 					<section>
 						<header>
-							<h2>Duis sed adpiscing veroeros amet</h2>
+							<h2>¿Tu mascota necesita atención inmediata?</h2>
 						</header>
 						<div class="content">
-							<p><strong>Proin tempus feugiat</strong> sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore.</p>
+							<p><strong>Agenda una cita</strong> o contáctanos de inmediato para atender emergencias. Tu tranquilidad y el bienestar de tu mascota son nuestra prioridad.</p>
 							<ul class="actions">
-								<li><a href="#" class="button primary large">Get Started</a></li>
-								<li><a href="#" class="button large">Learn More</a></li>
+								<li><a href="#contacto" class="button primary large">Agendar Cita</a></li>
+								<li><a href="tel:+50493489180" class="button large">Llamar a Urgencias</a></li>
 							</ul>
 						</div>
 					</section>
 
-				<!-- Elements -->
-				<!--
-					<section>
+				<!-- Section Contacto -->
+					<section id="contacto">
 						<header>
-							<h2>Elements</h2>
+							<h2>Ponte en contacto</h2>
 						</header>
 						<div class="content">
-
-							<section>
-								<header>
-									<h3>Text</h3>
-								</header>
-								<div class="content">
-									<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-									This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-									This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-									<hr />
-									<h2>Heading Level 2</h2>
-									<h3>Heading Level 3</h3>
-									<h4>Heading Level 4</h4>
-									<h5>Heading Level 5</h5>
-									<hr />
-									<h5>Blockquote</h5>
-									<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-									<h5>Preformatted</h5>
-									<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-  print 'Iteration ' + i;
-  deck.shuffle();
-  i++;
-}
-
-print 'Sorted in ' + i + ' iterations.';</code></pre>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Lists</h3>
-								</header>
-								<div class="content">
-
-									<h4>Unordered</h4>
-									<ul>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Alternate</h4>
-									<ul class="alt">
-										<li>Dolor pulvinar etiam.</li>
-										<li>Sagittis adipiscing.</li>
-										<li>Felis enim feugiat.</li>
-									</ul>
-
-									<h4>Ordered</h4>
-									<ol>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis viverra.</li>
-										<li>Felis enim feugiat.</li>
-										<li>Dolor pulvinar etiam.</li>
-										<li>Etiam vel felis lorem.</li>
-										<li>Felis enim et feugiat.</li>
-									</ol>
-									<h4>Icons</h4>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-									</ul>
-
-									<h4>Actions</h4>
-									<ul class="actions">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions stacked">
-										<li><a href="#" class="button primary">Default</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Table</h3>
-								</header>
-								<div class="content">
-									<h4>Default</h4>
-									<div class="table-wrapper">
-										<table>
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-
-									<h4>Alternate</h4>
-									<div class="table-wrapper">
-										<table class="alt">
-											<thead>
-												<tr>
-													<th>Name</th>
-													<th>Description</th>
-													<th>Price</th>
-												</tr>
-											</thead>
-											<tbody>
-												<tr>
-													<td>Item One</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Two</td>
-													<td>Vis ac commodo adipiscing arcu aliquet.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Three</td>
-													<td> Morbi faucibus arcu accumsan lorem.</td>
-													<td>29.99</td>
-												</tr>
-												<tr>
-													<td>Item Four</td>
-													<td>Vitae integer tempus condimentum.</td>
-													<td>19.99</td>
-												</tr>
-												<tr>
-													<td>Item Five</td>
-													<td>Ante turpis integer aliquet porttitor.</td>
-													<td>29.99</td>
-												</tr>
-											</tbody>
-											<tfoot>
-												<tr>
-													<td colspan="2"></td>
-													<td>100.00</td>
-												</tr>
-											</tfoot>
-										</table>
-									</div>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Buttons</h3>
-								</header>
-								<div class="content">
-									<ul class="actions">
-										<li><a href="#" class="button primary">Primary</a></li>
-										<li><a href="#" class="button">Default</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button large">Large</a></li>
-										<li><a href="#" class="button">Default</a></li>
-										<li><a href="#" class="button small">Small</a></li>
-									</ul>
-									<ul class="actions">
-										<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-										<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-									</ul>
-									<ul class="actions">
-										<li><span class="button primary disabled">Disabled</span></li>
-										<li><span class="button disabled">Disabled</span></li>
-									</ul>
-								</div>
-							</section>
-
-							<section>
-								<header>
-									<h3>Form</h3>
-								</header>
-								<div class="content">
-									<form method="post" action="#">
-										<div class="fields">
-											<div class="field half">
-												<label for="demo-name">Name</label>
-												<input type="text" name="demo-name" id="demo-name" value="" placeholder="Jane Doe" />
-											</div>
-											<div class="field half">
-												<label for="demo-email">Email</label>
-												<input type="email" name="demo-email" id="demo-email" value="" placeholder="jane@untitled.tld" />
-											</div>
-											<div class="field">
-												<label for="demo-category">Category</label>
-												<select name="demo-category" id="demo-category">
-													<option value="">-</option>
-													<option value="1">Manufacturing</option>
-													<option value="1">Shipping</option>
-													<option value="1">Administration</option>
-													<option value="1">Human Resources</option>
-												</select>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-												<label for="demo-priority-low">Low</label>
-											</div>
-											<div class="field half">
-												<input type="radio" id="demo-priority-high" name="demo-priority">
-												<label for="demo-priority-high">High</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-copy" name="demo-copy">
-												<label for="demo-copy">Email me a copy</label>
-											</div>
-											<div class="field half">
-												<input type="checkbox" id="demo-human" name="demo-human" checked>
-												<label for="demo-human">Not a robot</label>
-											</div>
-											<div class="field">
-												<label for="demo-message">Message</label>
-												<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-											</div>
-										</div>
-										<ul class="actions">
-											<li><input type="submit" value="Send Message" class="primary" /></li>
-											<li><input type="reset" value="Reset" /></li>
-										</ul>
-									</form>
-								</div>
-							</section>
-
-						</div>
-					</section>
-				-->
-
-				<!-- Section -->
-					<section>
-						<header>
-							<h2>Get in touch</h2>
-						</header>
-						<div class="content">
-							<p><strong>Auctor commodo</strong> interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis.</p>
-							<form>
+							<p><strong>Escríbenos para dudas o reservaciones.</strong> Responderemos a la brevedad para coordinar la visita de tu mascota.</p>
+							<form action="#" method="post">
 								<div class="fields">
 									<div class="field half">
-										<input type="text" name="name" id="name" placeholder="Name" />
+										<input type="text" name="name" id="name" placeholder="Tu Nombre" />
 									</div>
 									<div class="field half">
-										<input type="email" name="email" id="email" placeholder="Email" />
+										<input type="email" name="email" id="email" placeholder="Tu Correo Electrónico" />
 									</div>
 									<div class="field">
-										<textarea name="message" id="message" placeholder="Message" rows="7"></textarea>
+										<textarea name="message" id="message" placeholder="Escribe tu mensaje o el motivo de la consulta (ej. vacunación, corte, consulta médica)" rows="7"></textarea>
 									</div>
 								</div>
 								<ul class="actions">
-									<li><input type="submit" value="Send Message" class="button primary" /></li>
+									<li><input type="submit" value="Enviar Mensaje" class="button primary" /></li>
 								</ul>
 							</form>
 						</div>
 						<footer>
 							<ul class="items">
 								<li>
-									<h3>Email</h3>
-									<a href="#">information@untitled.ext</a>
+									<h3>Correo Electrónico</h3>
+									<a href="mailto:contacto@huellitasysalud.com">contacto@huellitasysalud.com</a>
 								</li>
 								<li>
-									<h3>Phone</h3>
-									<a href="#">(000) 000-0000</a>
+									<h3>Teléfono / WhatsApp</h3>
+									<a href="tel:+50493489180">+504 9348-9180</a>
 								</li>
 								<li>
-									<h3>Address</h3>
-									<span>1234 Somewhere Road, Nashville, TN 00000</span>
+									<h3>Dirección</h3>
+									<span>Av. Principal de la Ciudad #123, Frente al Parque</span>
 								</li>
 								<li>
-									<h3>Elsewhere</h3>
+									<h3>Síguenos</h3>
 									<ul class="icons">
 										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-										<li><a href="#" class="icon brands fa-codepen"><span class="label">Codepen</span></a></li>
+										<li><a href="#" class="icon brands fa-whatsapp"><span class="label">WhatsApp</span></a></li>
 									</ul>
 								</li>
 							</ul>
@@ -455,7 +457,7 @@ print 'Sorted in ' + i + ' iterations.';</code></pre>
 					</section>
 
 				<!-- Copyright -->
-					<div class="copyright">&copy; Untitled. All rights reserved. Design: <a href="https://html5up.net">HTML5 UP</a>.</div>
+					<div class="copyright">&copy; Clínica Veterinaria Huellitas & Salud. Todos los derechos reservados. Diseño base: <a href="https://html5up.net">HTML5 UP</a>.</div>
 
 			</div>
 

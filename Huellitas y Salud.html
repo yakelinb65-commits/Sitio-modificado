@@ -13,34 +13,269 @@
 		<meta name="keywords" content="veterinaria, salud animal, perros, gatos, cirugia veterinaria, vacunacion, estetica canina" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
-			/* Estilos para el contenedor del logo y el título */
+			/* =========================================================
+			   ESTILOS PREMIUM Y MARQUESINA ELEGANTE
+			   ========================================================= */
+
+			:root {
+				--brand-teal-dark: #075B7A;    /* Azul Océano Profundo */
+				--brand-navy: #0A192F;         /* Azul Noche Elegante */
+				--brand-gold: #D4AF37;         /* Dorado Cálido / Oro */
+				--brand-gold-light: #F3E5AB;   /* Dorado Claro para Destacar */
+				--text-dark: #0F172A;          /* Texto Nítido */
+				--text-body: #1E293B;          /* Gris Oscuro para Lectura */
+			}
+
+			/* 1. MARQUESINA ESPECTACULAR EN LA PARTE SUPERIOR */
+			.marquee-container {
+				width: 100%;
+				background: linear-gradient(135deg, var(--brand-teal-dark) 0%, var(--brand-navy) 100%);
+				color: #ffffff;
+				padding: 12px 0;
+				overflow: hidden;
+				position: relative;
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+				border-bottom: 2px solid var(--brand-gold);
+				z-index: 100;
+			}
+
+			.marquee-content {
+				display: flex;
+				white-space: nowrap;
+				animation: marquee-scroll 25s linear infinite;
+			}
+
+			.marquee-item {
+				display: inline-flex;
+				align-items: center;
+				gap: 10px;
+				font-size: 1.05rem;
+				font-weight: 600;
+				padding: 0 35px;
+				color: #ffffff;
+				letter-spacing: 0.5px;
+			}
+
+			.marquee-item span.gold {
+				color: var(--brand-gold-light);
+				font-weight: 800;
+			}
+
+			.marquee-item i {
+				color: var(--brand-gold);
+				font-size: 1.2rem;
+			}
+
+			@keyframes marquee-scroll {
+				0% { transform: translateX(0); }
+				100% { transform: translateX(-50%); }
+			}
+
+			.marquee-container:hover .marquee-content {
+				animation-play-state: paused;
+			}
+
+			/* 2. NUEVO FONDO EN EL PANEL LATERAL IZQUIERDO */
+			section > header {
+				background: linear-gradient(160deg, var(--brand-navy) 0%, var(--brand-teal-dark) 100%) !important;
+				border-right: 3px solid var(--brand-gold);
+			}
+
+			section > header h1, 
+			section > header h2, 
+			section > header h3, 
+			section > header p {
+				color: #ffffff !important;
+				opacity: 1 !important;
+			}
+
+			/* 3. TÍTULO "HUELLITAS & SALUD" MÁS GRANDE Y ELEGANTE */
+			.brand-container h1 {
+				margin: 0;
+				color: #ffffff !important;
+				font-size: 3.5rem !important; /* Letra extra grande */
+				font-weight: 900 !important;   /* Súper negrita */
+				letter-spacing: -1px;
+				line-height: 1.1;
+				text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+			}
+
+			.brand-container h1 span.brand-accent {
+				color: var(--brand-gold) !important;
+				font-style: italic;
+			}
+
+			/* Contenedor del Logo */
 			.brand-container {
 				display: flex;
 				align-items: center;
-				gap: 15px;
-				margin-bottom: 1rem;
+				gap: 18px;
+				margin-bottom: 1.2rem;
 			}
 			.brand-logo {
-				max-width: 80px;
+				max-width: 90px;
 				height: auto;
-				border-radius: 8px;
+				border-radius: 12px;
 				object-fit: contain;
+				background-color: #ffffff;
+				padding: 6px;
+				border: 2px solid var(--brand-gold);
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 			}
-			.brand-container h1 {
-				margin: 0;
+
+			/* Flecha de desplazamiento */
+			.arrow::before {
+				color: #ffffff !important;
 			}
+
+			/* 4. CONTENIDO PRINCIPAL Y LECTURA CÓMODA */
+			body, p, span, li, dt, dd, td, th, label, input, textarea {
+				color: var(--text-body) !important;
+				opacity: 1 !important;
+				font-size: 1.05rem !important;
+				line-height: 1.65 !important;
+			}
+
+			.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+				color: var(--text-dark) !important;
+				opacity: 1 !important;
+				font-weight: 800 !important;
+			}
+
+			strong, b {
+				color: var(--brand-teal-dark) !important;
+				font-weight: 800 !important;
+			}
+
+			/* Íconos de servicios */
+			.feature-icons li {
+				color: var(--text-body) !important;
+				font-weight: 600 !important;
+				font-size: 1.05rem !important;
+				opacity: 1 !important;
+			}
+			.feature-icons li::before {
+				color: var(--brand-teal-dark) !important;
+				opacity: 1 !important;
+			}
+
+			/* 5. BOTONES ELEGANTES EN DORADO Y AZUL */
+			input[type="submit"].primary,
+			input[type="reset"].primary,
+			input[type="button"].primary,
+			button.primary,
+			.button.primary {
+				background: linear-gradient(135deg, var(--brand-gold) 0%, #b89228 100%) !important;
+				box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35) !important;
+				color: #0a192f !important;
+				font-weight: 800 !important;
+				border: none !important;
+				border-radius: 8px !important;
+				opacity: 1 !important;
+			}
+
+			input[type="submit"].primary:hover,
+			input[type="reset"].primary:hover,
+			input[type="button"].primary:hover,
+			button.primary:hover,
+			.button.primary:hover {
+				background: linear-gradient(135deg, #e5c158 0%, var(--brand-gold) 100%) !important;
+			}
+
+			.button {
+				border: 2px solid var(--brand-teal-dark) !important;
+				color: var(--brand-teal-dark) !important;
+				font-weight: 800 !important;
+				border-radius: 8px !important;
+				opacity: 1 !important;
+			}
+
+			section > header .button {
+				border-color: #ffffff !important;
+				color: #ffffff !important;
+			}
+
+			section > header .button:hover {
+				background-color: var(--brand-gold) !important;
+				border-color: var(--brand-gold) !important;
+				color: #0a192f !important;
+			}
+
+			.button:hover {
+				background-color: var(--brand-teal-dark) !important;
+				color: #ffffff !important;
+			}
+
+			a {
+				color: var(--brand-teal-dark) !important;
+				font-weight: 700;
+				opacity: 1 !important;
+			}
+			a:hover {
+				color: var(--brand-navy) !important;
+			}
+
+			footer .items h3 {
+				color: var(--brand-teal-dark) !important;
+				font-weight: 800 !important;
+				font-size: 1.25rem !important;
+			}
+
 			@media screen and (max-width: 736px) {
 				.brand-container {
 					flex-direction: column;
 					align-items: flex-start;
 				}
 				.brand-logo {
-					max-width: 60px;
+					max-width: 75px;
+				}
+				.brand-container h1 {
+					font-size: 2.5rem !important;
+				}
+				body, p, span, li {
+					font-size: 1rem !important;
 				}
 			}
 		</style>
 	</head>
 	<body class="is-preload">
+
+		<!-- Marquesina Espectacular Superior -->
+		<div class="marquee-container">
+			<div class="marquee-content">
+				<div class="marquee-item">
+					<i class="icon solid fa-paw"></i> ¡Bienvenidos a <span class="gold">Clínica Veterinaria Huellitas & Salud</span>!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-ambulance"></i> Atención de <span class="gold">Urgencias 24/7</span>
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-user-md"></i> Cuidado Médico Profesional y Diagnóstico Moderno
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-cut"></i> <span class="gold">Estética y Spa Canino/Felino</span> — ¡Haz tu cita hoy!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-phone"></i> Contacto / WhatsApp: <span class="gold">+504 9348-9180</span>
+				</div>
+				<!-- Repetición para Loop Continuo -->
+				<div class="marquee-item">
+					<i class="icon solid fa-paw"></i> ¡Bienvenidos a <span class="gold">Clínica Veterinaria Huellitas & Salud</span>!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-ambulance"></i> Atención de <span class="gold">Urgencias 24/7</span>
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-user-md"></i> Cuidado Médico Profesional y Diagnóstico Moderno
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-cut"></i> <span class="gold">Estética y Spa Canino/Felino</span> — ¡Haz tu cita hoy!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-phone"></i> Contacto / WhatsApp: <span class="gold">+504 9348-9180</span>
+				</div>
+			</div>
+		</div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
@@ -48,10 +283,10 @@
 				<!-- Intro -->
 					<section class="intro">
 						<header>
-							<!-- Logo alineado a la izquierda del título -->
+							<!-- Logo y Título Huellitas & Salud Grande -->
 							<div class="brand-container">
 								<img src="images/logo.png" alt="Logo Huellitas y Salud" class="brand-logo" />
-								<h1>Huellitas & Salud</h1>
+								<h1>Huellitas <span class="brand-accent">&</span> Salud</h1>
 							</div>
 							<p>Cuidado médico profesional y con amor para los miembros más consentidos de tu familia.</p>
 							<ul class="actions">
@@ -89,7 +324,7 @@
 								<li class="icon solid fa-heartbeat">Cirugía General</li>
 								<li class="icon solid fa-ambulance">Urgencias 24/7</li>
 							</ul>
-							<p>Prevenimos y tratamos diversas padecimientos con equipamiento moderno, ofreciéndote tranquilidad en el diagnóstico y tratamiento de tu mascota.</p>
+							<p>Prevenimos y tratamos diversos padecimientos con equipamiento moderno, ofreciéndote tranquilidad en el diagnóstico y tratamiento de tu mascota.</p>
 						</div>
 					</section>
 
@@ -159,7 +394,7 @@
 							<p><strong>Agenda una cita</strong> o contáctanos de inmediato para atender emergencias. Tu tranquilidad y el bienestar de tu mascota son nuestra prioridad.</p>
 							<ul class="actions">
 								<li><a href="#contacto" class="button primary large">Agendar Cita</a></li>
-								<li><a href="tel:+50400000000" class="button large">Llamar a Urgencias</a></li>
+								<li><a href="tel:+50493489180" class="button large">Llamar a Urgencias</a></li>
 							</ul>
 						</div>
 					</section>
@@ -192,11 +427,11 @@
 							<ul class="items">
 								<li>
 									<h3>Correo Electrónico</h3>
-									<a href="mailto:contacto@huellitasy salud.com">contacto@huellitasy salud.com</a>
+									<a href="mailto:contacto@huellitasysalud.com">contacto@huellitasysalud.com</a>
 								</li>
 								<li>
 									<h3>Teléfono / WhatsApp</h3>
-									<a href="tel:+50400000000">+504 9348-9180</a>
+									<a href="tel:+50493489180">+504 9348-9180</a>
 								</li>
 								<li>
 									<h3>Dirección</h3>
