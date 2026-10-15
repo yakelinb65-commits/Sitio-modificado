@@ -14,30 +14,32 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<style>
 			/* =========================================================
-			   DISEÑO ELEGANTE PREMIUM Y MARQUESINA ESPECTACULAR
+			   ESTILOS PREMIUM Y UNIFICACIÓN DE FONDO AZUL OSCURO
 			   ========================================================= */
 
 			:root {
-				--brand-blue: #077197;          /* Azul Océano Principal */
-				--brand-blue-dark: #044b64;     /* Azul Profundo */
-				--brand-navy: #0a192f;          /* Fondo Elegante Azul Noche */
-				--brand-gold: #d4af37;          /* Dorado Elegante */
-				--brand-gold-light: #f3e5ab;    /* Dorado Suave */
-				--text-dark: #0f172a;           /* Texto Nítido */
-				--text-body: #2d3748;           /* Gris Oscuro Lectura */
-				--accent-btn: #077197;          /* Botones Principales */
-				--accent-btn-hover: #044b64;
+				--brand-teal-dark: #075B7A;    /* Azul Océano Profundo */
+				--brand-navy: #0A192F;          /* Azul Noche Elegante */
+				--brand-gold: #D4AF37;          /* Dorado Cálido / Oro */
+				--brand-gold-light: #F3E5AB;   /* Dorado Claro para Destacar */
+				--text-dark: #FFFFFF;          /* Texto Nítido Claro */
+				--text-body: #E2E8F0;          /* Gris Claro para Lectura Fluida */
 			}
 
-			/* 1. MARQUESINA ESPECTACULAR FLOATING GLASSMORPHISM */
+			/* Forzar fondo azul oscuro en todo el cuerpo y contenedores principales */
+			body, html, #wrapper, section {
+				background-color: var(--brand-navy) !important;
+			}
+
+			/* 1. MARQUESINA ESPECTACULAR EN LA PARTE SUPERIOR */
 			.marquee-container {
 				width: 100%;
-				background: linear-gradient(135deg, rgba(7, 113, 151, 0.95), rgba(10, 25, 47, 0.98));
+				background: linear-gradient(135deg, var(--brand-teal-dark) 0%, var(--brand-navy) 100%);
 				color: #ffffff;
 				padding: 12px 0;
 				overflow: hidden;
 				position: relative;
-				box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 				border-bottom: 2px solid var(--brand-gold);
 				z-index: 100;
 			}
@@ -45,7 +47,7 @@
 			.marquee-content {
 				display: flex;
 				white-space: nowrap;
-				animation: marquee-scroll 28s linear infinite;
+				animation: marquee-scroll 25s linear infinite;
 			}
 
 			.marquee-item {
@@ -54,7 +56,7 @@
 				gap: 10px;
 				font-size: 1.05rem;
 				font-weight: 600;
-				padding: 0 30px;
+				padding: 0 35px;
 				color: #ffffff;
 				letter-spacing: 0.5px;
 			}
@@ -74,14 +76,13 @@
 				100% { transform: translateX(-50%); }
 			}
 
-			/* Pause al pasar el mouse por la marquesina */
 			.marquee-container:hover .marquee-content {
 				animation-play-state: paused;
 			}
 
-			/* 2. PANEL LATERAL IZQUIERDO ELEGANTE */
+			/* 2. FONDO UNIFICADO EN EL PANEL LATERAL Y SECCIONES */
 			section > header {
-				background: linear-gradient(160deg, #0a192f 0%, #077197 100%) !important;
+				background: linear-gradient(160deg, var(--brand-navy) 0%, var(--brand-teal-dark) 100%) !important;
 				border-right: 3px solid var(--brand-gold);
 			}
 
@@ -93,15 +94,15 @@
 				opacity: 1 !important;
 			}
 
-			/* 3. TÍTULO "HUELLITAS & SALUD" BIEN GRANDE Y SOFISTICADO */
+			/* 3. TÍTULO "HUELLITAS & SALUD" MÁS GRANDE Y MARIPOSA */
 			.brand-container h1 {
 				margin: 0;
 				color: #ffffff !important;
-				font-size: 3.6rem !important; /* Extra Grande */
-				font-weight: 900 !important;   /* Extra Negrita */
+				font-size: 3.8rem !important; /* Tamaño incrementado */
+				font-weight: 900 !important;   /* Súper negrita */
 				letter-spacing: -1px;
 				line-height: 1.1;
-				text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+				text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 			}
 
 			.brand-container h1 span.brand-accent {
@@ -109,22 +110,45 @@
 				font-style: italic;
 			}
 
-			/* Logo enmarcado en dorado */
+			/* Contenedor del Logo, Título y Mariposa Ordenados */
 			.brand-container {
 				display: flex;
 				align-items: center;
-				gap: 18px;
+				flex-wrap: wrap;
+				gap: 15px;
 				margin-bottom: 1.2rem;
 			}
+
 			.brand-logo {
-				max-width: 95px;
+				max-width: 85px;
 				height: auto;
-				border-radius: 14px;
+				border-radius: 12px;
 				object-fit: contain;
 				background-color: #ffffff;
 				padding: 6px;
 				border: 2px solid var(--brand-gold);
-				box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+				box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+			}
+
+			/* Mariposa unida al título */
+			.header-butterfly {
+				max-width: 65px;
+				height: auto;
+				vertical-align: middle;
+				margin-left: 5px;
+				border-radius: 8px;
+				display: inline-block;
+				animation: float-butterfly 3s ease-in-out infinite;
+			}
+
+			@keyframes float-butterfly {
+				0%, 100% { transform: translateY(0); }
+				50% { transform: translateY(-5px); }
+			}
+
+			/* Flecha de desplazamiento */
+			.arrow::before {
+				color: #ffffff !important;
 			}
 
 			/* 4. CONTENIDO PRINCIPAL Y LECTURA CÓMODA */
@@ -132,19 +156,32 @@
 				color: var(--text-body) !important;
 				opacity: 1 !important;
 				font-size: 1.05rem !important;
-				line-height: 1.7 !important;
+				line-height: 1.65 !important;
 			}
 
 			.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
-				color: var(--brand-navy) !important;
+				color: #ffffff !important;
 				opacity: 1 !important;
 				font-weight: 800 !important;
 			}
 
-			/* Textos resaltados en dorado o azul marino */
 			strong, b {
-				color: var(--brand-blue) !important;
+				color: var(--brand-gold-light) !important;
 				font-weight: 800 !important;
+			}
+
+			/* Estilos para videos incrustados */
+			.video-container {
+				margin: 20px 0;
+				border-radius: 12px;
+				overflow: hidden;
+				border: 2px solid var(--brand-gold);
+				box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+			}
+			.video-container video {
+				width: 100%;
+				height: auto;
+				display: block;
 			}
 
 			/* Íconos de servicios */
@@ -155,24 +192,76 @@
 				opacity: 1 !important;
 			}
 			.feature-icons li::before {
-				color: var(--brand-blue) !important;
+				color: var(--brand-gold) !important;
 				opacity: 1 !important;
 			}
 
-			/* 5. BOTONES ELEGANTES CON EFECTO Y SOMBRA */
+			/* 5. ESTILOS PARA REPRODUCTOR DE AUDIO Y GIFS INTEGRADOS */
+			.audio-widget-container {
+				background: linear-gradient(135deg, var(--brand-navy) 0%, var(--brand-teal-dark) 100%);
+				padding: 20px;
+				border-radius: 12px;
+				box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+				border: 2px solid var(--brand-gold);
+				display: flex;
+				align-items: center;
+				gap: 20px;
+				margin-top: 25px;
+			}
+			.audio-widget-container img {
+				width: 70px;
+				height: 70px;
+				object-fit: contain;
+			}
+			.audio-widget-container audio {
+				width: 100%;
+				accent-color: var(--brand-gold);
+			}
+			.gif-badge {
+				display: inline-block;
+				max-width: 45px;
+				vertical-align: middle;
+				margin-left: 8px;
+				border-radius: 6px;
+			}
+
+			/* 6. CORRECCIÓN DE CONTRASTE PARA EL FOOTER Y PARTE INFERIOR */
+			#contacto footer, 
+			#contacto footer * {
+				color: #ffffff !important;
+				opacity: 1 !important;
+			}
+			#contacto footer h3 {
+				color: var(--brand-gold-light) !important;
+				font-weight: 800 !important;
+			}
+			#contacto footer a,
+			#contacto footer span {
+				color: #f8fafc !important;
+			}
+			#contacto footer a:hover {
+				color: var(--brand-gold) !important;
+			}
+			.copyright, .copyright * {
+				color: #94a3b8 !important;
+			}
+			.copyright a {
+				color: var(--brand-gold-light) !important;
+			}
+
+			/* 7. BOTONES ELEGANTES EN DORADO Y AZUL */
 			input[type="submit"].primary,
 			input[type="reset"].primary,
 			input[type="button"].primary,
 			button.primary,
 			.button.primary {
 				background: linear-gradient(135deg, var(--brand-gold) 0%, #b89228 100%) !important;
-				box-shadow: 0 4px 15px rgba(212, 175, 55, 0.35) !important;
+				box-shadow: 0 4px 12px rgba(212, 175, 55, 0.35) !important;
 				color: #0a192f !important;
 				font-weight: 800 !important;
 				border: none !important;
 				border-radius: 8px !important;
 				opacity: 1 !important;
-				transition: all 0.3s ease;
 			}
 
 			input[type="submit"].primary:hover,
@@ -181,52 +270,41 @@
 			button.primary:hover,
 			.button.primary:hover {
 				background: linear-gradient(135deg, #e5c158 0%, var(--brand-gold) 100%) !important;
-				transform: translateY(-2px);
-				box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5) !important;
 			}
 
 			.button {
-				border: 2px solid var(--brand-blue) !important;
-				color: var(--brand-blue) !important;
+				border: 2px solid var(--brand-gold) !important;
+				color: #ffffff !important;
 				font-weight: 800 !important;
 				border-radius: 8px !important;
 				opacity: 1 !important;
-				transition: all 0.3s ease;
 			}
 
-			/* Botón en el panel lateral */
 			section > header .button {
-				border-color: var(--brand-gold) !important;
-				color: var(--brand-gold) !important;
+				border-color: #ffffff !important;
+				color: #ffffff !important;
 			}
 
 			section > header .button:hover {
 				background-color: var(--brand-gold) !important;
+				border-color: var(--brand-gold) !important;
 				color: #0a192f !important;
 			}
 
 			.button:hover {
-				background-color: var(--brand-blue) !important;
+				background-color: var(--brand-teal-dark) !important;
 				color: #ffffff !important;
 			}
 
-			/* Enlaces */
 			a {
-				color: var(--brand-blue) !important;
+				color: var(--brand-gold-light) !important;
 				font-weight: 700;
 				opacity: 1 !important;
 			}
 			a:hover {
-				color: var(--brand-blue-dark) !important;
+				color: #ffffff !important;
 			}
 
-			footer .items h3 {
-				color: var(--brand-blue) !important;
-				font-weight: 800 !important;
-				font-size: 1.25rem !important;
-			}
-
-			/* Adaptabilidad móvil */
 			@media screen and (max-width: 736px) {
 				.brand-container {
 					flex-direction: column;
@@ -236,10 +314,17 @@
 					max-width: 75px;
 				}
 				.brand-container h1 {
-					font-size: 2.6rem !important;
+					font-size: 2.8rem !important;
+				}
+				.header-butterfly {
+					max-width: 50px;
 				}
 				body, p, span, li {
 					font-size: 1rem !important;
+				}
+				.audio-widget-container {
+					flex-direction: column;
+					align-items: stretch;
 				}
 			}
 		</style>
@@ -250,26 +335,10 @@
 		<div class="marquee-container">
 			<div class="marquee-content">
 				<div class="marquee-item">
-					<i class="icon solid fa-paw"></i> ¡Bienvenidos a <span class="gold">Clínica Veterinaria Huellitas & Salud</span>!
+					<i class="icon solid fa-paw"></i> ¡Bienvenidos a <span class="gold">Clínica Veterinaria Huellitas & Salud</span>! <img src="mariposa.GIF" alt="Mariposa" class="gif-badge" />
 				</div>
 				<div class="marquee-item">
-					<i class="icon solid fa-ambulance"></i> Atención de <span class="gold">Urgencias y Emergencias 24/7</span>
-				</div>
-				<div class="marquee-item">
-					<i class="icon solid fa-user-md"></i> Cuidado Médico Profesional y Diagnóstico Moderno
-				</div>
-				<div class="marquee-item">
-					<i class="icon solid fa-cut"></i> <span class="gold">Estética y Spa Canino/Felino</span> — ¡Haz tu cita hoy!
-				</div>
-				<div class="marquee-item">
-					<i class="icon solid fa-phone"></i> Llámanos o escríbenos al <span class="gold">+504 9348-9180</span>
-				</div>
-				<!-- Duplicado para loop continuo fluido -->
-				<div class="marquee-item">
-					<i class="icon solid fa-paw"></i> ¡Bienvenidos a <span class="gold">Clínica Veterinaria Huellitas & Salud</span>!
-				</div>
-				<div class="marquee-item">
-					<i class="icon solid fa-ambulance"></i> Atención de <span class="gold">Urgencias y Emergencias 24/7</span>
+					<i class="icon solid fa-ambulance"></i> Atención de <span class="gold">Urgencias 24/7</span>
 				</div>
 				<div class="marquee-item">
 					<i class="icon solid fa-user-md"></i> Cuidado Médico Profesional y Diagnóstico Moderno
@@ -278,7 +347,23 @@
 					<i class="icon solid fa-cut"></i> <span class="gold">Estética y Spa Canino/Felino</span> — ¡Haz tu cita hoy!
 				</div>
 				<div class="marquee-item">
-					<i class="icon solid fa-phone"></i> Llámanos o escríbenos al <span class="gold">+504 9348-9180</span>
+					<i class="icon solid fa-phone"></i> Contacto / WhatsApp: <span class="gold">+504 9348-9180</span>
+				</div>
+				<!-- Repetición para Loop Continuo -->
+				<div class="marquee-item">
+					<i class="icon solid fa-paw"></i> ¡Bienvenidos a <span class="gold">Clínica Veterinaria Huellitas & Salud</span>! <img src="mariposa.GIF" alt="Mariposa" class="gif-badge" />
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-ambulance"></i> Atención de <span class="gold">Urgencias 24/7</span>
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-user-md"></i> Cuidado Médico Profesional y Diagnóstico Moderno
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-cut"></i> <span class="gold">Estética y Spa Canino/Felino</span> — ¡Haz tu cita hoy!
+				</div>
+				<div class="marquee-item">
+					<i class="icon solid fa-phone"></i> Contacto / WhatsApp: <span class="gold">+504 9348-9180</span>
 				</div>
 			</div>
 		</div>
@@ -289,10 +374,12 @@
 				<!-- Intro -->
 					<section class="intro">
 						<header>
-							<!-- Logo y Título "Huellitas & Salud" BIEN GRANDE Y ELEGANTE -->
+							<!-- Logo, Título Huellitas & Salud y Mariposa Organizados -->
 							<div class="brand-container">
 								<img src="images/logo.png" alt="Logo Huellitas y Salud" class="brand-logo" />
-								<h1>Huellitas <span class="brand-accent">&</span> Salud</h1>
+								<div>
+									<h1>Huellitas <span class="brand-accent">&</span> Salud <img src="mariposa.GIF" alt="Mariposa decorativa" class="header-butterfly" /></h1>
+								</div>
 							</div>
 							<p>Cuidado médico profesional y con amor para los miembros más consentidos de tu familia.</p>
 							<ul class="actions">
@@ -349,6 +436,13 @@
 										<p>Realizamos revisiones periódicas, planes de vacunación a medida y controles de nutrición para mantener a tu mascota sana y fuerte.</p>
 									</header>
 									<div class="content">
+										<!-- Video 1 Agregado aquí -->
+										<div class="video-container">
+											<video autoplay muted loop playsinline>
+												<source src="vacunación.mp4" type="video/mp4">
+												Tu navegador no soporta la reproducción de videos.
+											</video>
+										</div>
 										<div class="gallery">
 											<a href="images/gallery/fulls/01.jpg" class="landscape"><img src="images/gallery/thumbs/01.jpg" alt="Consulta médica" /></a>
 											<a href="images/gallery/fulls/02.jpg"><img src="images/gallery/thumbs/02.jpg" alt="Vacunación" /></a>
@@ -365,6 +459,13 @@
 										<p>Contamos con equipos de ecografía, rayos X y quirófano completamente equipado para procedimientos preventivos y de urgencia.</p>
 									</header>
 									<div class="content">
+										<!-- Video 2 Agregado aquí -->
+										<div class="video-container">
+											<video autoplay muted loop playsinline>
+												<source src="Chequeo.mp4" type="video/mp4">
+												Tu navegador no soporta la reproducción de videos.
+											</video>
+										</div>
 										<div class="gallery">
 											<a href="images/gallery/fulls/05.jpg" class="landscape"><img src="images/gallery/thumbs/05.jpg" alt="Quirófano veterinario" /></a>
 											<a href="images/gallery/fulls/06.jpg"><img src="images/gallery/thumbs/06.jpg" alt="Ecografía" /></a>
@@ -412,7 +513,19 @@
 						</header>
 						<div class="content">
 							<p><strong>Escríbenos para dudas o reservaciones.</strong> Responderemos a la brevedad para coordinar la visita de tu mascota.</p>
-							<form action="#" method="post">
+							
+							<!-- Reproductor de Audio y GIF de Radio integrado -->
+							<div class="audio-widget-container">
+								<img src="radio.gif" alt="Reproductor animado" />
+								<div style="flex: 1;">
+									<audio controls>
+										<source src="audio.mp3" type="audio/mpeg">
+										Tu navegador no soporta el elemento de audio.
+									</audio>
+								</div>
+							</div>
+
+							<form action="#" method="post" style="margin-top: 25px;">
 								<div class="fields">
 									<div class="field half">
 										<input type="text" name="name" id="name" placeholder="Tu Nombre" />
